@@ -1,11 +1,11 @@
 function replaceContent(input) {
-	$(".content").html(input);
+	$(".content")[0].innerHTML = input;
 }
 function changeColor(input) {
-	$("body").css("background-color",input);
+	document.body.style.background = input;
 }
 function loadAnother() {
-	$.getJSON(beg + "index.php?q=-1&c=color", function (data) {
+	h(beg + "index.php?q=-1&c=color", function (data) {
 		replaceContent(data.content);
 		changeColor(data.color);
 	});
